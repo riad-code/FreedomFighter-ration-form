@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Non-PIMS Ration Management 2027</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#13263e;--teal:#087f8c;--bg:#f3f6fa;--line:#dbe4ed}*{box-sizing:border-box}body{font-family:'Hind Siliguri',sans-serif;background:var(--bg);color:#1e293b;font-size:14px}.topbar{background:linear-gradient(115deg,#102238,#244867);color:#fff;padding:20px 0}.page-wrap{max-width:1440px;margin:auto;padding:22px 14px 42px}.page-title{font-size:24px;font-weight:700;margin:0}.sub-title{font-size:12px;color:#cbd9e7}.cardx{background:#fff;border:1px solid var(--line);border-radius:13px;margin-bottom:17px;overflow:hidden}.section-head{padding:13px 16px;background:#f8fbfd;border-bottom:1px solid var(--line);display:flex;align-items:center;gap:10px}.section-no{width:30px;height:30px;border-radius:9px;background:#e5f5f5;color:var(--teal);display:grid;place-items:center;font-weight:700;flex-shrink:0}.section-head h2{font-size:16px;font-weight:700;margin:0}.section-head p{font-size:11px;color:#64748b;margin:2px 0 0}.section-body{padding:16px}.form-label{font-size:12px;font-weight:600;margin-bottom:5px}.req{color:#dc2626}.form-control,.form-select{font-size:13px;border-color:#d7e0e9;border-radius:8px;min-height:38px}.form-control:focus,.form-select:focus{border-color:var(--teal);box-shadow:0 0 0 .2rem #087f8c20}.btn{font-size:13px;font-weight:600;border-radius:8px}.btn-primary{background:var(--teal);border-color:var(--teal)}.btn-primary:hover{background:#066a75;border-color:#066a75}.search-panel{background:#edf6fa;border:1px solid #d1e6ed;border-radius:12px;padding:15px}.member-card{border:1px solid var(--line);border-radius:12px;background:white;overflow:hidden}.member-head{background:#f4f8fb;border-bottom:1px solid var(--line);padding:10px 12px;display:flex;justify-content:space-between;align-items:center;gap:8px}.member-body{padding:13px}.member-body .form-label{font-size:11px}.member-body .form-control,.member-body .form-select{font-size:12px;min-height:35px}.member-photo{width:104px;height:118px;border:1px dashed #aab8c7;border-radius:9px;background:#f8fafc;display:flex;align-items:center;justify-content:center;overflow:hidden;color:#64748b;font-size:11px;text-align:center}.member-photo img{width:100%;height:100%;object-fit:cover}.member-layout{display:grid;grid-template-columns:115px minmax(0,1fr);gap:14px}.photo-controls{min-width:0}.helper{font-size:11px;color:#64748b}.add-row{padding:9px 12px;background:#fbfdff;border-top:1px dashed #d7e0e9;display:flex;justify-content:flex-start}.member-wrap{margin-bottom:14px}.member-wrap:last-child{margin-bottom:0}.actionbar{position:sticky;bottom:10px;z-index:5;background:#ffffffed;border:1px solid var(--line);border-radius:13px;padding:12px}.hidden{display:none!important}.status-pill{font-size:11px}@media(max-width:767px){.page-wrap{padding:12px 8px}.page-title{font-size:19px}.actionbar{position:static}.member-layout{grid-template-columns:1fr}.photo-side{display:flex;align-items:center;gap:12px}.member-photo{width:88px;height:100px;flex-shrink:0}}@media print{.topbar,.search-panel,.actionbar,.no-print,.add-row,.photo-input,.remove-btn{display:none!important}body{background:white}.page-wrap{padding:0}.cardx,.member-wrap{break-inside:avoid}.member-wrap{page-break-inside:avoid}}
+</style></head>
+<body>
+
+  
+<header class="topbar">
+  <div class="container-fluid px-3 px-lg-4" style="max-width:1500px">
+    <div class="d-flex justify-content-between align-items-center gap-3">
+      <div class="d-flex align-items-center gap-3">
+        <div class="brand-mark">▦</div>
+        <div><div class="eyebrow"> Ration Management</div><h1 class="page-title">Non-PIMS মুক্তিযোদ্ধা রেশনীর তথ্য ফরম</h1><div class="sub-title">ডিজিটাল তথ্য নিবন্ধন • যাচাই • সংরক্ষণ • ২০২৭</div></div>
+      </div>
+      <div class="d-flex align-items-center gap-3">
+       
+        <div class="text-end"><div class="small">সংরক্ষিত রেকর্ড</div><h4 id="recordCount" class="mb-0">0</h4></div></div>
+      </div>
+    </div>
+  </div>
+</header>
+<main class="page-wrap">
+  <div class="d-flex justify-content-between align-items-end mb-3 gap-2">
+    <div><div class="eyebrow" style="color:var(--teal)">REGISTRATION WORKSPACE</div><h2 class="h5 fw-bold mb-1">মুক্তিযোদ্ধা রেশনীর নিবন্ধন ও তথ্য ব্যবস্থাপনা</h2><div class="helper">লাল তারকা (*) চিহ্নিত তথ্যগুলো আবশ্যক। সংরক্ষণের আগে তথ্য যাচাই করুন।</div></div>
+    <button class="btn btn-outline-secondary no-print" type="button" onclick="newRecord()">＋ নতুন ফরম</button>
+  </div>
+        
+<section class="cardx">
+    <div class="section-head"><div class="section-no">01</div><div><h2>রেকর্ড খুঁজুন</h2><p>পুরোনো মুক্তিযোদ্ধা রেশনীর তথ্য রেজিস্ট্রেশন নম্বর দিয়ে খুঁজুন</p></div></div>
+    <div class="section-body">
+      <div class="search-panel">
+        <div class="row g-3 align-items-end">
+          <div class="col-md-3"><label class="form-label">রেশনীর ধরন<span class="req">*</span></label><select id="searchCategory" class="form-select"><option value="মুক্তিযোদ্ধা">মুক্তিযোদ্ধা</option><option value="অন্যান্য">অন্যান্য</option></select></div>
+          <div class="col-md-3"><label class="form-label">রেজিস্ট্রেশন নম্বর</label><input id="searchReg" class="form-control" placeholder="রেজিস্ট্রেশন নম্বর লিখুন"></div>
+          <div class="col-md-3 d-flex gap-2"><button class="btn btn-primary flex-grow-1" onclick="searchRecord()">⌕ তথ্য খুঁজুন</button><button class="btn btn-outline-secondary" onclick="clearSearch()" title="সার্চ পরিষ্কার">↺</button></div>
+        </div>
+        <div id="searchMessage" class="mt-3 hidden" role="status"></div>
+      </div>
+      <div class="helper mt-2">নোট: এই সংস্করণে ব্রাউজারে আগে সংরক্ষিত রেকর্ড খোঁজা যাবে। অফিসের কেন্দ্রীয় ডেটাবেজে খোঁজার জন্য API/SQL Server সংযোগ প্রয়োজন।</div>
+    </div>
+  </section>
+
+<form id="rationForm"><input type="hidden" id="recordId">
+<section class="cardx"><div class="section-head">
+    <div class="section-no">02</div><div><h2>মুক্তিযোদ্ধার তথ্য</h2><p>প্রধান পরিচিতি ও যোগাযোগের তথ্য</p></div></div>
+    <div class="section-body"><div class="row g-3">
+<div class="col-md-4"><label class="form-label">রেশনীর ধরন <span class="req">*</span></label>
+    <select id="category" class="form-select" required><option value="মুক্তিযোদ্ধা">মুক্তিযোদ্ধা</option>
+        <option value="অন্যান্য">অন্যান্য</option></select></div>
+<div class="col-md-4"><label class="form-label">মুক্তিযোদ্ধার শ্রেণি <span class="req">*</span></label><select id="className" class="form-select" required><option value="">নির্বাচন করুন</option><option>মুক্তিযোদ্ধা</option><option>শহীদ মুক্তিযোদ্ধা পরিবার</option><option>যুদ্ধাহত মুক্তিযোদ্ধা</option><option>অন্যান্য</option></select></div>
+<div class="col-md-4"><label class="form-label">মুক্তিযোদ্ধার রেজিস্ট্রেশন নম্বর <span class="req">*</span></label><input id="regNo" class="form-control" required></div>
+
+<div class="col-md-4"><label class="form-label">পিতার নাম <span class="req">*</span></label><input id="fatherName" class="form-control" required></div>
+<div class="col-md-4"><label class="form-label">মাতার নাম <span class="req">*</span></label><input id="motherName" class="form-control" required></div>
+<div class="col-md-4"><label class="form-label">জন্ম তারিখ <span class="req">*</span></label><input id="dob" type="date" class="form-control" required></div>
+<div class="col-md-4"><label class="form-label">জাতীয় পরিচয়পত্র নম্বর</label><input id="nid" class="form-control"></div>
+<div class="col-md-4"><label class="form-label">মোবাইল নম্বর <span class="req">*</span></label><input id="mobile" type="tel" class="form-control" required placeholder="01XXXXXXXXX"></div>
+<div class="col-md-4"><label class="form-label">ধর্ম</label><select id="religion" class="form-select"><option value="">নির্বাচন করুন</option><option>ইসলাম</option><option>হিন্দু</option><option>বৌদ্ধ</option><option>খ্রিস্টান</option><option>অন্যান্য</option></select></div>
+
+<div class="col-md-4"><label class="form-label">মোট রেশনভোগী সদস্য সংখ্যা</label><input id="familyCount" type="number" min="0" class="form-control" value="0"></div>
+
+<div class="col-md-4"><label class="form-label">বৈবাহিক অবস্থা</label><select id="maritalStatus" class="form-select"><option value="">নির্বাচন করুন</option><option>অবিবাহিত</option><option>বিবাহিত</option><option>বিধবা</option><option>বিপত্নীক</option><option>তালাকপ্রাপ্ত</option></select></div>
+
+<div class="col-md-6"><label class="form-label">স্থায়ী ঠিকানা <span class="req">*</span></label><textarea id="permanentAddress" class="form-control" required rows="2"></textarea></div>
+
+<div class="col-md-6"><label class="form-label">বর্তমান ঠিকানা</label><textarea id="currentAddress" class="form-control" rows="2"></textarea><div class="form-check mt-1"><input id="sameAddress" class="form-check-input" type="checkbox" onchange="copyPermanentAddress()"><label class="form-check-label helper" for="sameAddress">বর্তমান ঠিকানা স্থায়ী ঠিকানার মতো</label></div></div>
+
+<div class="col-md-4"><label class="form-label">মৃত্যুর তারিখ (মৃতের ক্ষেত্রে)</label><input id="deathDate" type="date" class="form-control"></div>
+
+<div class="col-md-8"><label class="form-label">মৃত্যু সনদ নম্বর (মৃতের ক্ষেত্রে)</label><input id="deathCert" class="form-control"></div>
+</div></div>
+</section>
+
+<section class="cardx"><div class="section-head"><div class="section-no">03</div><div><h2>রেশনভোগী কার্ডধারী ও পরিবারের সদস্যদের তথ্য</h2><p>প্রথম ৪টি কার্ড সবসময় থাকবে; প্রয়োজন হলে যেকোনো কার্ডের নিচে + দিয়ে সদস্য যোগ করুন</p></div></div><div class="section-body"><div id="memberList"></div><div class="helper mt-2">প্রতিটি কার্ডে ছবি আপলোডের ব্যবস্থা আছে। অতিরিক্ত সদস্যের কার্ড যে কার্ডের + বোতামে ক্লিক করবেন, তার ঠিক নিচেই যুক্ত হবে।</div></div>
+</section>
+
+<div class="actionbar d-flex flex-wrap justify-content-between align-items-center gap-2"><div><strong>তথ্য সংরক্ষণ</strong><div class="helper">রেকর্ড এই ব্রাউজারে সংরক্ষিত হবে। নিয়মিত ব্যাকআপ রাখুন।</div></div><div class="d-flex flex-wrap gap-2"><button type="button" class="btn btn-outline-secondary" onclick="window.print()">প্রিন্ট</button><button type="button" class="btn btn-outline-secondary" onclick="exportData()">JSON ব্যাকআপ</button><button type="button" class="btn btn-outline-secondary" onclick="document.getElementById('importFile').click()">ব্যাকআপ ইমপোর্ট</button><input id="importFile" type="file" accept=".json,application/json" class="d-none" onchange="importData(event)"><button type="button" class="btn btn-outline-danger" onclick="newRecord()">ফাঁকা ফরম</button><button type="submit" class="btn btn-primary">✓ তথ্য সংরক্ষণ করুন</button></div></div>
+</form></main>
+<script>
+const STORE_KEY='nonPimsRationRecords_v2';
+const baseMemberFields=[
+['gender','লিঙ্গ','select','পুরুষ,নারী,অন্যান্য'],
+['memberNo','সদস্য সংখ্যা','text',''],
+['memberPin','রেশনীর PIN নম্বর','text',''],
+['memberClassNo','রেশনী নম্বর','text',''],
+['memberRIDNo','কার্ড নম্বর','text',''],
+['nameBn','রেশনীর নাম (বাংলা)','text',''],
+['nameEn','রেশনীর নাম (ইংরেজি)','text',''],
+['relation','মুক্তিযোদ্ধার সঙ্গে সম্পর্ক','select','স্বামী, স্ত্রী,পিতা,মাতা,ভাই,বোন,অন্যান্য'],
+['dob','জন্ম তারিখ','date',''],
+['profession','পেশা','text',''],
+['father','পিতার নাম','text',''],
+['mother','মাতার নাম','text',''],
+['marital','বৈবাহিক অবস্থা','select','অবিবাহিত,বিবাহিত,বিধবা,বিপত্নীক,তালাকপ্রাপ্ত'],
+['religion','ধর্ম','select','ইসলাম,হিন্দু,বৌদ্ধ,খ্রিস্টান,অন্যান্য'],
+['nid','জাতীয় পরিচয়পত্র/জন্ম নিবন্ধন নম্বর','text',''],
+['policeVerifyNo','পুলিশ হেডকোয়ার্টার্সের স্মারক নম্বর','text',''],
+['policeVerifyDate','পুলিশ হেডকোয়ার্টার্সের স্মারকের তারিখ','date',''],
+['trustMemoNo','কল্যাণ ট্রাস্টের স্মারক নম্বর','text',''],
+['trustMemoDate','কল্যাণ ট্রাস্টের স্মারকের তারিখ','date',''],
+['unitOrderNo','রেশন ইউনিটের আদেশ নম্বর','text',''],
+['unitOrderDate','রেশন ইউনিটের আদেশের তারিখ','date',''],
+['mobile','মোবাইল নম্বর','tel',''],
+['unitName','রেশন প্রদানকারী ইউনিট','text',''],
+['status','রেশন অবস্থা','select','সচল,স্থগিত']
+];
+let memberCounter=0;
+function escapeHtml(s){return String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+
+function fieldMarkup(memberId,[key,label,type,options='']){let id=`${memberId}_${key}`,ctrl='';if(type==='select'){ctrl=`<select class="form-select" id="${id}" data-field="${key}"><option value="">নির্বাচন করুন</option>${options.split(',').filter(Boolean).map(v=>`<option>${escapeHtml(v)}</option>`).join('')}</select>`;}else{ctrl=`<input class="form-control" id="${id}" data-field="${key}" type="${type==='date'?'date':type==='tel'?'tel':'text'}">`;}return `<div class="col-12 col-sm-6 col-lg-4"><label class="form-label" for="${id}">${escapeHtml(label)}</label>${ctrl}</div>`;}
+
+function createMemberCard({primary=false,number=0,afterId=null,data={}}={}){
+ const id=data._cardId||`member_${++memberCounter}`;const wrap=document.createElement('div');wrap.className='member-wrap';wrap.dataset.memberId=id;wrap.dataset.primary=primary?'1':'0';wrap.dataset.number=number;wrap.dataset.afterId=afterId||'';
+ const title=primary?`কার্ডধারী ${number}`:`অতিরিক্ত সদস্য`;
+ const fields=baseMemberFields.map(f=>fieldMarkup(id,f)).join('');
+ wrap.innerHTML=`<div class="member-card"><div class="member-head"><strong>${title}</strong><div class="d-flex gap-2 align-items-center"><span class="badge text-bg-light">${primary?'স্থায়ী কার্ড':'অতিরিক্ত কার্ড'}</span>${primary?'':`<button type="button" class="btn btn-sm btn-outline-danger remove-btn" data-remove="${id}">কার্ড বাদ দিন ×</button>`}</div></div><div class="member-body"><div class="member-layout"><div class="photo-side"><div class="member-photo" id="${id}_photoPreview">ছবি নেই</div><div class="photo-controls"><label class="form-label mt-2">সদস্যের ছবি</label><input class="form-control photo-input" type="file" id="${id}_photo" accept="image/*" data-photo-input="${id}"><div class="helper mt-1">JPG/PNG ছবি নির্বাচন করুন</div><button type="button" class="btn btn-sm btn-outline-secondary mt-2" data-clear-photo="${id}">ছবি সরান</button></div></div><div class="row g-2">${fields}</div></div></div><div class="add-row no-print"><button type="button" class="btn btn-sm btn-outline-primary" data-add-after="${id}">＋ এই কার্ডের নিচে সদস্য যোগ করুন</button></div></div>`;
+
+ const list=document.getElementById('memberList');if(afterId){const anchor=list.querySelector(`[data-member-id="${CSS.escape(afterId)}"]`);if(anchor)anchor.after(wrap);else list.append(wrap);}else list.append(wrap);
+ wrap.querySelectorAll('[data-field]').forEach(el=>{const k=el.dataset.field;if(data[k]!==undefined&&data[k]!==null)el.value=data[k];});
+ if(data.photo){showPhoto(id,data.photo);}return wrap;
+}
+function showPhoto(id,src){const box=document.getElementById(`${id}_photoPreview`);if(box)box.innerHTML=src?`<img src="${src}" alt="সদস্যের ছবি">`:'ছবি নেই';}
+
+function readPhoto(file){return new Promise((resolve,reject)=>{if(!file){resolve('');return;}if(!file.type.startsWith('image/')){reject(new Error('ছবির ফাইল নির্বাচন করুন'));return;}const reader=new FileReader();reader.onload=()=>{const img=new Image();img.onload=()=>{const max=600,scale=Math.min(1,max/Math.max(img.width,img.height)),canvas=document.createElement('canvas');canvas.width=Math.round(img.width*scale);canvas.height=Math.round(img.height*scale);canvas.getContext('2d').drawImage(img,0,0,canvas.width,canvas.height);resolve(canvas.toDataURL('image/jpeg',.78));};img.onerror=()=>reject(new Error('ছবি পড়া যায়নি'));img.src=reader.result;};reader.onerror=()=>reject(new Error('ছবি পড়া যায়নি'));reader.readAsDataURL(file);});}
+document.getElementById('memberList').addEventListener('click',e=>{const add=e.target.closest('[data-add-after]');if(add){const afterId=add.dataset.addAfter;const card=createMemberCard({afterId});card.scrollIntoView({behavior:'smooth',block:'center'});return;}const remove=e.target.closest('[data-remove]');if(remove){const card=document.querySelector(`[data-member-id="${CSS.escape(remove.dataset.remove)}"]`);if(card&&!card.dataset.primary)card.remove();return;}const clear=e.target.closest('[data-clear-photo]');if(clear){const id=clear.dataset.clearPhoto;const input=document.getElementById(`${id}_photo`);if(input)input.value='';showPhoto(id,'');}});
+document.getElementById('memberList').addEventListener('change',async e=>{const input=e.target.closest('[data-photo-input]');if(!input)return;const id=input.dataset.photoInput;try{const src=await readPhoto(input.files[0]);showPhoto(id,src);input.dataset.photoValue=src;}catch(err){alert(err.message);input.value='';}});
+
+function initializeMemberCards(){const list=document.getElementById('memberList');list.innerHTML='';memberCounter=0;for(let n=1;n<=4;n++)createMemberCard({primary:true,number:n});}
+function getRecords(){try{return JSON.parse(localStorage.getItem(STORE_KEY)||'[]');}catch{return [];}}
+function setRecords(records){localStorage.setItem(STORE_KEY,JSON.stringify(records));updateCount();}
+function updateCount(){document.getElementById('recordCount').textContent=getRecords().length;}
+function val(id){return document.getElementById(id)?.value?.trim()||'';}
+function setVal(id,value){const el=document.getElementById(id);if(el&&value!==undefined&&value!==null)el.value=value;}
+function showSearch(msg,type='info'){const el=document.getElementById('searchMessage');el.className=`alert alert-${type} mt-3`;el.textContent=msg;}
+
+function clearSearch(){setVal('searchPin','');setVal('searchReg','');const m=document.getElementById('searchMessage');m.className='hidden';m.textContent='';}
+
+function searchRecord(){const pin=val('searchPin'),reg=val('searchReg'),cat=val('searchCategory');if(!pin&&!reg){showSearch('PIN অথবা রেজিস্ট্রেশন নম্বর লিখুন।','warning');return;}const found=getRecords().find(r=>r.category===cat&&((pin&&r.pin===pin)||(reg&&r.regNo===reg)));if(found){loadRecord(found);showSearch('রেকর্ড পাওয়া গেছে। ফরমে তথ্য দেখানো হয়েছে।','success');}else showSearch('এই ব্রাউজারে রেকর্ড পাওয়া যায়নি। নতুন রেকর্ড হলে ফরম পূরণ করুন।','warning');}
+
+function copyPermanentAddress(){if(document.getElementById('sameAddress').checked)setVal('currentAddress',val('permanentAddress'));}
+
+function collectMembers(){return [...document.querySelectorAll('.member-wrap')].map(w=>{const m={_cardId:w.dataset.memberId,primary:w.dataset.primary==='1',number:Number(w.dataset.number||0),photo:''};w.querySelectorAll('[data-field]').forEach(el=>m[el.dataset.field]=el.value.trim());const img=w.querySelector('.member-photo img');if(img)m.photo=img.src;return m;});}
+
+function collectRecord(){const r={};['category','className','regNo','pin','fatherName','motherName','dob','nid','mobile','religion','familyCount','maritalStatus','permanentAddress','currentAddress','deathDate','deathCert'].forEach(k=>r[k]=val(k));r.id=val('recordId')||((crypto&&crypto.randomUUID)?crypto.randomUUID():String(Date.now()));r.members=collectMembers();r.updatedAt=new Date().toISOString();return r;}
+
+function loadRecord(r){setVal('recordId',r.id);['category','className','regNo','pin','fatherName','motherName','dob','nid','mobile','religion','familyCount','maritalStatus','permanentAddress','currentAddress','deathDate','deathCert'].forEach(k=>setVal(k,r[k]));document.getElementById('sameAddress').checked=false;initializeMemberCards();const list=document.getElementById('memberList');const defaults=[...list.querySelectorAll('.member-wrap')];const members=r.members||[];members.forEach((m,i)=>{let card;if(i<4){card=defaults[i];}else{card=createMemberCard({afterId:list.querySelector('.member-wrap:last-of-type')?.dataset.memberId||null,data:m});}if(!card)return;card.querySelectorAll('[data-field]').forEach(el=>{if(m[el.dataset.field]!==undefined)el.value=m[el.dataset.field];});if(m.photo)showPhoto(card.dataset.memberId,m.photo);});window.scrollTo({top:document.getElementById('rationForm').offsetTop-15,behavior:'smooth'});}
+
+function newRecord(){document.getElementById('rationForm').reset();setVal('recordId','');document.getElementById('sameAddress').checked=false;initializeMemberCards();clearSearch();}
+document.getElementById('rationForm').addEventListener('submit',async e=>{e.preventDefault();if(!e.currentTarget.reportValidity())return;try{const r=collectRecord();const records=getRecords();const duplicate=records.find(x=>x.id!==r.id&&x.category===r.category&&(x.pin===r.pin||x.regNo===r.regNo));if(duplicate){alert('একই শ্রেণির PIN অথবা রেজিস্ট্রেশন নম্বর আগে থেকেই আছে। আগে সার্চ করুন।');return;}const idx=records.findIndex(x=>x.id===r.id);if(idx>=0)records[idx]=r;else records.push(r);try{setRecords(records);}catch(err){alert('তথ্য সংরক্ষণ করা যায়নি। ছবির আকার/রেকর্ড বেশি হওয়ায় ব্রাউজারের জায়গা শেষ হতে পারে। ছবি ছোট করুন অথবা ব্যাকআপ নিয়ে পুরোনো রেকর্ড পরিষ্কার করুন।');return;}setVal('recordId',r.id);setVal('searchPin',r.pin);setVal('searchReg',r.regNo);setVal('searchCategory',r.category);showSearch('তথ্য সফলভাবে সংরক্ষিত হয়েছে।','success');alert('তথ্য সংরক্ষিত হয়েছে।');}catch(err){alert('সংরক্ষণে সমস্যা হয়েছে: '+err.message);}});
+
+function exportData(){const blob=new Blob([JSON.stringify(getRecords(),null,2)],{type:'application/json'}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download='non-pims-ration-backup.json';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);}
+
+function importData(event){const file=event.target.files?.[0];if(!file)return;const reader=new FileReader();reader.onload=()=>{try{const parsed=JSON.parse(reader.result);if(!Array.isArray(parsed))throw new Error();const records=getRecords();parsed.forEach(r=>{if(!r||!r.id)return;const i=records.findIndex(x=>x.id===r.id);if(i>=0)records[i]=r;else records.push(r);});setRecords(records);showSearch('ব্যাকআপ ইমপোর্ট সম্পন্ন হয়েছে।','success');alert('ব্যাকআপ ইমপোর্ট সম্পন্ন হয়েছে।');}catch{alert('সঠিক JSON ব্যাকআপ ফাইল নির্বাচন করুন।');}event.target.value='';};reader.readAsText(file);}
+initializeMemberCards();updateCount();
+</script>
+</body>
+</html>
